@@ -18,6 +18,8 @@ env:
   VCPKG_INSTALLED_DIR: ${{ github.workspace }}/builds/ninja-multi-vcpkg-ci/vcpkg_installed
   VCPKG_ROOT_PROJECT: ${{ github.workspace }}/vcpkg4aspia
   VCPKG_BINARY_SOURCES: 'default,readwrite'
+  VCPKG_INSTALL_OPTIONS: --x-abi-tools-use-exact-versions
+  VCPKG_DISABLE_COMPILER_TRACKING: ON
 
 jobs:
   build-all-matrix:
