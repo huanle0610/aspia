@@ -22,18 +22,15 @@ env:
 jobs:
   build-all-matrix:
     name: ${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.build_type }}
-    runs-on: ${{ matrix.os }}
+    runs-on: 'self-hosted'
     if: github.event_name == 'push'
     strategy:
       fail-fast: true
       matrix:
         os: [win11]
-        arch: [x86, x64]
+        arch: [x64]
         build_type: [release, debug]
         include:
-          - os: win11
-            arch: x86
-            triplet: x86-windows-static
           - os: win11
             arch: x64
             triplet: x64-windows-static
